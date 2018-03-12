@@ -5,7 +5,6 @@
 #include <assert.h>
 
 #include IMPL
-
 #ifdef OPT
 #define OUT_FILE "opt.txt"
 #else
@@ -86,11 +85,11 @@ int main(int argc, char *argv[])
     cpu_time2 = diff_in_second(start, end);
 
     FILE *output = fopen(OUT_FILE, "a");
-    fprintf(output, "append() findName() %lf %lf\n", cpu_time1, cpu_time2);
+    fprintf(output, "append() findName() %.9lf %.9lf\n", cpu_time1, cpu_time2);
     fclose(output);
 
-    printf("execution time of append() : %lf sec\n", cpu_time1);
-    printf("execution time of findName() : %lf sec\n", cpu_time2);
+    printf("execution time of append() : %.9lf sec\n", cpu_time1);
+    printf("execution time of findName() : %.9lf sec\n", cpu_time2);
 
     if (pHead->pNext) free(pHead->pNext);
     free(pHead);
